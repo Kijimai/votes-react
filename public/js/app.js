@@ -1,12 +1,16 @@
 class Product extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handleUpVote = this.handleUpVote.bind(this)
-  }
+  // constructor(props) {
+  //   super(props)
 
-  handleUpVote() {
+  // this.handleUpVote = this.handleUpVote.bind(this)
+  // }
+
+  handleUpVote = () => {
     this.props.onVote(this.props.id)
   }
+  // handleUpVote() {
+  //   this.props.onVote(this.props.id)
+  // }
 
   render() {
     return (
@@ -88,20 +92,7 @@ class ProductList extends React.Component {
       )
     })
 
-    return (
-      <div className="ui unstackable items">
-        {productComponents}
-        {/* <Product
-          id={product.id}
-          title={product.title}
-          description={product.description}
-          url={product.url}
-          votes={product.votes}
-          submitterAvatarUrl={product.submitterAvatarUrl}
-          productImageUrl={product.productImageUrl}
-        /> */}
-      </div>
-    )
+    return <div className="ui unstackable items">{productComponents}</div>
   }
 }
 
